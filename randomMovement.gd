@@ -16,11 +16,11 @@ var state = ""
 onready var bullet = load("res://scenes/bullettype1.tscn")
 
 func _ready():
-  getDest()
+  getRandomDest()
   
 
   pass
-func getDest():
+func getRandomDest():
   destination.x = randi()%300
   destination.y = randi()%300
   var t = randi()%1
@@ -58,7 +58,7 @@ func setVelocity():
     if abs(position.y - PlayerVars.loc.y) < p:
       setState("idling")
   else:
-    getDest()
+    getRandomDest()
     setState("moving")
     if position.x  > destination.x:
       velocity.x = -speedX   
