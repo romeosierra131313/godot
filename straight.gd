@@ -8,7 +8,6 @@ Extends Area2D
 
 
 var m = 1
-var c = 1
 var speedX = 100
 var speedY = 100
 var destination = Vector2(0,0)
@@ -33,10 +32,8 @@ func setYintercept(e):
   pass
 func getDest():
   destination.x = position.x - speedX
-  destination.y = m*destination.x + c
+  destination.y = destination.x * m
 
-  destination.x = destination.x + (position.x*dirX) 
-  destination.y = destination.y + (position.y*dirY)
   pass
 func spawnBullet():
   if time > timer:
