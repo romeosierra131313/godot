@@ -7,15 +7,10 @@ Extends Area2D
 #add visibility notifier##
 
 
-
-var r = 16  ## acceptable range within destination point to ask for new point###
-var p = 8   ## acceptable y distance from player
 var m = 1
 var c = 1
 var speedX = 100
 var speedY = 100
-var dirX = 1
-var dirY = 1
 var destination = Vector2(0,0)
 var velocity = Vector2(0,0)
 var timer = 0.25
@@ -98,8 +93,8 @@ func on_animatedsprite_animation_finished(anim_name):
       get_parent().spawnCrashExplosion(position)
       queue_free
     "fire":
-      setState("idling")
-      get_node("Animatedsprite").animation = "idle"
+      setState("moving")
+      get_node("Animatedsprite").animation = "move"
     "move":
       setState("moving")
       get_node("Animatedsprite").animation = "move"
